@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+  
+</head>
+
+<body>
+ <div class="login">
+	<h1>Prediksi Harga Taaksi Uber</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+    	<input type="text" name="jarak" placeholder="jarak" required="required" />
+        <input type="text" name="UberXL" placeholder="UberXL" required="required" />
+		<input type="text" name="Black" placeholder="Black" required="required" />
+		<input type="text" name="UberX" placeholder="UberX" required="required" />
+        <input type="text" name="WAV" placeholder="WAV" required="required" />
+        <input type="text" name="Black SUV" placeholder="Black SUV" required="required" />
+        <input type="text" name="UberPool" placeholder="UberPool" required="required" />
+
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+
+ </div>
+
+
+</body>
+</html>
